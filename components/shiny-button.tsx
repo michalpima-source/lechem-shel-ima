@@ -1,10 +1,10 @@
 'use client'
 
 import React from 'react'
-import { motion, type AnimationProps } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
-const animationProps: AnimationProps = {
+const animationProps = {
   initial: { '--x': '100%', scale: 0.8 } as never,
   animate: { '--x': '-100%', scale: 1 } as never,
   whileTap: { scale: 0.95 },
@@ -29,7 +29,7 @@ export function ShinyButton({ children, className, ...props }: ShinyButtonProps)
   return (
     <motion.button
       {...animationProps}
-      {...(props as never)}
+      {...(props as any)}
       className={cn(
         'relative rounded-lg px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out hover:shadow-md bg-primary',
         className
